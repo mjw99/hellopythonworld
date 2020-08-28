@@ -5,7 +5,13 @@ on: [push, pull_request]
 
 jobs:
   build:
+
+    runs-on: ubuntu-20.04
+
+    strategy:
+      matrix:
         python-version: [3.6]
+
     steps:
       - uses: actions/checkout@v2
 
