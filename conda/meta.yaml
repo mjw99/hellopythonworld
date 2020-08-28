@@ -1,16 +1,16 @@
-{% set name = "hellopythonworld" %}
-{% set version = "1.0" %}
+{% set data = load_setup_py_data() %}
+
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: "{{ data['name']  }}"
+  version: "{{ data['version'] }}"
 
 source:
   path: ..
 
 build:
   number: 0
-  script: python setup.py install
+  script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   host:
@@ -24,7 +24,6 @@ test:
     - hellopythonworld
 
 about:
-  home: https://github.com/mjw99/hellopythonworld/
-  license: BSD
-  license_family: BSD
-  summary: Test
+  home: {{ data['url'] }}
+  license: {{ data['license'] }}
+  summary: {{ data['description'] }}
