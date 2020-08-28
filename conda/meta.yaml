@@ -7,7 +7,7 @@ package:
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  script: "{{ PYTHON }} -m pip install .. --no-deps --ignore-installed -vv "
 
 requirements:
   host:
