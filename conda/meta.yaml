@@ -21,7 +21,7 @@ requirements:
 
 test:
   imports:
-    - click
+    - hellopythonworld
 
 about:
   home: https://github.com/mjw99/hellopythonworld/
