@@ -1,0 +1,27 @@
+{% set name = "hellopythonworld" %}
+{% set version = "1.0" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+
+requirements:
+  host:
+    - pip
+    - python
+  run:
+    - python
+
+test:
+  imports:
+    - click
+
+about:
+  home: https://github.com/mjw99/hellopythonworld/
+  license: BSD
+  license_family: BSD
+  summary: Test
