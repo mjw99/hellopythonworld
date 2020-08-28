@@ -30,10 +30,3 @@ jobs:
         run: |
                 pytest ./hellopythonworld
 
-      - name: publish-to-conda
-        uses: fcakyon/conda-publish-action@v1.3
-        with:
-          subdir: 'conda'
-          anacondatoken: ${{ secrets.ANACONDA_TOKEN }}
-          platforms: 'linux'
-
