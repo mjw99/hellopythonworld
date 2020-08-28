@@ -5,11 +5,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
-
-    name: Ubuntu 20.04 Build and Test
-
-    python-version: [3.6]
+        python-version: [3.6]
     steps:
       - uses: actions/checkout@v2
 
