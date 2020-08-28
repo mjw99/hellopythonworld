@@ -8,8 +8,15 @@ jobs:
     runs-on: ubuntu-20.04
 
     name: Ubuntu 20.04 Build and Test
+
+    python-version: [3.6]
     steps:
       - uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
 
       - name: Resolve dependencies
         run: pip3 install -r requirements.txt
